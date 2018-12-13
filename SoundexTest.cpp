@@ -17,6 +17,7 @@ public:
 using ::testing::Eq;
 TEST(SoundexEncoding, RetainsSoleLetterOfOneLetterWord)
 {
+
     //Arrange
    Soundex soundex;
    //Act
