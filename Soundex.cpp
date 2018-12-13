@@ -6,10 +6,29 @@
 
 string Soundex::zeroPad(const string& word) const
 {
-    return word + "000";
+    auto zerosNeeded = 4 - word.length();
+    return word + string(zerosNeeded, '0');
 }
 
 string Soundex::encode(const string& word) const
 {
-    return zeroPad(word);
+    auto encoded = head(word);
+    if(word.length() > 1)
+    {
+        encoded += "1";
+    }
+    return zeroPad(head(word) + encodeDigits(word));
+}
+
+string Soundex::head(const string &word) const
+{
+    return word.substr(0,1);
+}
+
+string Soundex::encodeDigits(const string &word) const
+{
+    if(word.length() > 1)
+        return "1";
+
+    return "";
 }
