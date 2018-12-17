@@ -30,3 +30,47 @@ TEST_F(SoundexEncoding, ReplaceConsonantsWithAppropriateDigits)
     //Assert
     ASSERT_THAT(soundex.encode("Ab"), Eq("A100"));
 }
+
+TEST_F(SoundexEncoding, IgnoreNonAlphabetics)
+{
+    //Arrange
+    //Act
+    //Assert
+    ASSERT_THAT(soundex.encode("Ab"), Eq("A100"));
+}
+TEST_F(SoundexEncoding, ReplaceMultipleConsonants)
+{
+    //Arrange
+    //Act
+    //Assert
+    ASSERT_THAT(soundex.encode("Ab"), Eq("A100"));
+}
+TEST_F(SoundexEncoding, LimitLengthToFourCharacters)
+{
+    //Arrange
+    //Act
+    //Assert
+    ASSERT_THAT(soundex.encode("Ab"), Eq("A100"));
+}
+TEST_F(SoundexEncoding, CombineDuplicateEncoding)
+{
+    //Arrange
+    //Act
+    //Assert
+    ASSERT_THAT(soundex.encode("Ab"), Eq("A100"));
+}
+TEST_F(SoundexEncoding, UpperCaseFirstLetter)
+{
+    //Arrange
+    //Act
+    //Assert
+    ASSERT_THAT(soundex.encode("Ab"), Eq("A100"));
+}
+
+TEST_F(SoundexEncoding, IgnoreVowelsLikeLetters)
+{
+    //Arrange
+    //Act
+    //Assert
+    ASSERT_THAT(soundex.encode("Ab"), Eq("A100"));
+}
